@@ -20,6 +20,18 @@ class PhotosService{
         return this.Photos
 
     }
+    async getPhoto(name: string) {
+
+        if(!this.Photos.length)
+            await this.getAllPhotos()
+
+        this.Photos.map((photo)=>{
+
+            photo.title.search(name)
+
+        })
+
+    }
 
 
 }
